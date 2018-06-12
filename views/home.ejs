@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            #quotes{
+                margin-left: 30%;
+                height: 45px;
+                width: 35%;
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+                margin-top: 5%;
+            }
+            #btn{
+                background-color: #4CAF50; /* Green */
+                border: none;
+                border-radius: 5px;
+                color: white;
+                padding: 12px 40px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin-top: 3%;
+                margin-left: 45%;
+                margin-bottom: 3%;
+            }
+            #results{
+                font-size: 24px;
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+            }
+            h1{
+                font-size: 24px;
+                font-family: 'Roboto', sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Choose A Name And A Random Quote By Them Will Be Generated </h1>
+    <select id="quotes" name="cars">
+      <option value="jSmith">Jaden Smith</option>
+      <option value="pStar">Patrick Star</option>
+      <option value="mlk">Martin Luther King</option>
+      <option value="ghandi">Ghandi</option>
+      <option value="dpool">DeadPool</option>
+      <option value ="mMouse">Walt Disney</option>
+      <option value="wSmith">Will Smith</option>
+      <option value="jCole">J Cole</option>
+    </select>
+    <br>
+    <button onclick='getData()' id="btn" >Go</button>
+    <div id="results"></div>
+    
+    
+    
+    <script>
+        function getData(){
+            var person = document.getElementById('quotes').value
+            var finalHtml = ''
+            
+            if(person === 'jSmith'){
+                const jSmith = ["If I had a nickle for everytime I cried in the back of an Uber, I'd have another pair of Yeezy's ", "That moment when your wearing a skirt with no pants and you swerve way too hard", "When you stop texting her cause you like her too much", "Relationships are messed up but your face isn't","That moment when peeing feels so good you start crying","That moment when you cant sleep so you start doing math"]
+                finalHtml = jSmith[Math.floor(Math.random()*(jSmith.length))]
+            }
+            if(person ==='pStar'){
+                const pStar = ["Is mayonaisse an instrument?", "Maybe a story will cheer you up...Once upon a time there was an ugly barnacle. It was so ugly that everyone died. The end.", "I may be stupid but I'm not dumb.","Knowledge can never replace friendship. I prefer to be an idiot!", "OH MY, A QUARTER! I've always wanted a quarter."]
+                finalHtml = pStar[Math.floor(Math.random()*(pStar.length))]
+            }
+            if(person === 'mlk'){
+                const mlk = ["The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education.", "The time is always right to do what is right.","The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.","I refuse to accept the view that mankind is so tragically bound to the starless midnight of racism and war that the bright daybreak of peace and brotherhood can never become a reality... I believe that unarmed truth and unconditional love will have the final word."]
+                finalHtml = mlk[Math.floor(Math.random()*(mlk.length))]
+            }
+            if(person==='ghandi'){
+                const ghandi = ["Where there is love there is life.", "Happiness is when what you think, what you say, and what you do are in harmony.", "In a gentle way, you can shake the world.","The future depends on what we do in the present.","The weak can never forgive. Forgiveness is the attribute of the strong."]
+                finalHtml = ghandi[Math.floor(Math.random()*(ghandi.length))]
+            }
+            if(person === 'dpool'){
+                const dpool = ["You're about to be killed by a Zamboni.", "Fourth wall break inside of a fourth wall break? That's like... 16 walls!", "Listen Al, if I never see you again, I want you to know that I love you very much. I also buried 1,600 kilos of cocaine somewhere in the apartment -- right next to the cure for blindness. Good luck","After a brief adjustment period, and a couple of drinks, it's a face... I'd be happy to sit on.",]
+                finalHtml = dpool[Math.floor(Math.random()*(dpool.length))]
+            }
+            if(person === 'mMouse'){
+                const mMouse = ["All our dreams can come true, if we have the courage to pursue them", "It's kind of fun to do the impossible.", "The way to get started is to quit talking and begin doing.","I only hope that we never lose sight of one thing — that it was all started by a mouse.","When you believe in a thing, believe in it all the way, implicitly and unquestionable.","We keep moving forward, opening new doors, and doing new things, because we're curious and curiosity keeps leading us down new paths","You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality."]
+                finalHtml = mMouse[Math.floor(Math.random()*(mMouse.length))]
+            }
+            if(person === 'wSmith'){
+                const wSmtith = ["Throughout life people will make you mad, disrespect you and treat you bad. Let God deal with the things they do, cause hate in your heart will consume you too.","Too many people spend money they haven't earned, to buy things they don't want, to impress people they don't like.", "Money and success don't change people; they merely amplify what is already there", "In my mind, I've always been an A-list Hollywood superstar. Y'all just didn't know yet.", "I don't know what my calling is, but I want to be here for a bigger reason. I strive to be like the greatest people who have ever lived.", "You can cry, ain't no shame in it.", "If it was something that I really committed myself to, I don't think there's anything that could stop me becoming President of the United States."]
+                finalHtml = wSmith[Math.floor(Math.random()*(wSmith.length))]
+            }
+            if(person === 'jCole'){
+                const jCole = ["I put a lot of pressure on myself. I think something’s not good enough, and I won’t stop until I feel like I’ve made it. I’m never satisfied", "I feel like this: Whatever is in your path and in your heart, you need to do.", "Follow your heart. Don’t follow what you’ve been told you’re supposed to do.", "We got dreams and we got the right to chase ’em.", "I keep my head high, I got my wings to carry me. I don’t know freedom, I want my dreams to rescue me.", "Never give up until you’ve given out all your very best. It’s better to fail trying, than wondering what could have happened if you tried.", "It’s beauty in the struggle, ugliness in the success.", "“To appreciate the sun, you gotta know what rain is.", "Anything’s possible, you gotta dream like you never seen obstacles."]
+                finalHtml = jCole[Math.floor(Math.random()*(jCole.length))]
+            }
+            
+            document.getElementById('results').innerHTML = finalHtml
+        }
+    </script>
+</body>
+</html>
